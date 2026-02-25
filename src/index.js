@@ -9,9 +9,17 @@ import connectDB from "./db/index.js"; //Approach2
 dotenv.config({path: "./.env"});
 
 // Approach 2
-connectDB();
+connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 5000, () => {
+        console.log(`Server is running on port ${process.env.PORT || 5000}`);
+    });
+})
+.catch((error)=>{
+    console.error("MongoDB Connection fail Error: ",error);
+});
 
-
+//Normal Approach
 // function connectDB() {}
 // connectDB();
 
