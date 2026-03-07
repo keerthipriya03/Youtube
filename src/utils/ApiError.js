@@ -1,3 +1,5 @@
+// ApiError -> consistent error object.
+
 class ApiError extends Error {
     constructor(
         statusCode,
