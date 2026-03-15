@@ -5,7 +5,7 @@ class ApiError extends Error {
         statusCode,
         message = "Internal Server Error",
         error = [],
-        statck = ""
+        stack = ""
     ){
         super(message);
         this.statusCode = statusCode
@@ -13,7 +13,7 @@ class ApiError extends Error {
         this.message = message
         this.success = false;
         this.errors = this.errors
-        if(stack){
+        if(stck){
             this.stack = stack
         }else{
             Error.captureStackTrace(this, this.constructor)
