@@ -1,15 +1,15 @@
-import multer from 'multer';
+import multer from "multer";
 
 const storage = multer.diskStorage({
-    // destination: (req, file, cb) => {
-    destination: function (req, file, cb)  {
-        cb(null, './public/temp');
+    destination: function (req, file, cb) {
+      cb(null, "./public/temp")
     },
-    filename: (req, file, cb) => {
-        // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        // cb(null, file.fieldname + '-' + uniqueSuffix + '-' + file.originalname)
-        cb(null.file.originalname) // use the original file name as the name of the file saved on the server
+    filename: function (req, file, cb) {
+      
+      cb(null, file.originalname)
     }
-});
-
-export const upload = multer({ storage: storage });
+  })
+  
+export const upload = multer({ 
+    storage, 
+})

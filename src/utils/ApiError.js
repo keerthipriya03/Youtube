@@ -13,7 +13,7 @@ class ApiError extends Error {
         this.message = message
         this.success = false;
         this.errors = this.errors
-        if(stck){
+        if(stack){
             this.stack = stack
         }else{
             Error.captureStackTrace(this, this.constructor)
